@@ -76,6 +76,26 @@ class CreditAccount(Account):
     def add_interest(self, percent):
         self.debt *= 1 + percent
 
+class CurrencyExchange():
+    def __init__(self):
+        self.currencies = {
+            "USD" : {
+                "RUB" : 63.63,
+                "EUR" : 0.9
+            },
+            "EUR" : {
+                "RUB" : 71.11,
+                "USD" : 1.11
+            },
+            "RUB" : {
+                "USD" : 0.016,
+                "EUR" : 0.014
+            }
+        }
+
+    def exchange(self, amount, cur_from, cur_to):
+        return self.currencies[cur_from][cur_to] * amount
+
 def main():
     bank = BankingSystem()
     account1 = DebitAccount("02.04.2010", "Bob")
@@ -84,7 +104,6 @@ def main():
     bank.add_account(account1)
     bank.add_account(account2)
     print(bank)
-
 
 if __name__ == "__main__":
     main()
