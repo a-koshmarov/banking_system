@@ -1,3 +1,5 @@
+import random 
+
 class BankingSystem:
     def __init__(self):
         self.accounts = {
@@ -104,15 +106,24 @@ class CurrencyExchange():
         self.currencies = {
             "USD" : {
                 "RUB" : 63.63,
-                "EUR" : 0.9
+                "EUR" : 0.9,
+                "GBP" : 0.78
             },
             "EUR" : {
                 "RUB" : 71.11,
-                "USD" : 1.11
+                "USD" : 1.11,
+                "GBP" : 0.86
             },
             "RUB" : {
                 "USD" : 0.016,
-                "EUR" : 0.014
+                "EUR" : 0.014,
+                "GBP" : 0.01
+            },
+            "GBP" : {
+                "USD" : 1.29,
+                "EUR" : 1.16,
+                "RUB" : 82.05
+            
             }
         }
 
