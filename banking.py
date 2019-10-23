@@ -33,6 +33,12 @@ class Account:
     def __repr__(self):
         return "{} was registered on {}".format(self.name, self.reg_date)
 
+    def change_name(self, new_name):
+        self.name = new_name
+
+    def change_date(self, new_date):
+        self.date = new_date
+
 
 class DebitAccount(Account):
     def __init__(self, reg_date, name):
@@ -68,13 +74,22 @@ class DebitAccount(Account):
             self.balance -= amount
         account.balance += amount
 
+
+class CreditCard():
+    def __init__(self, issuer):
+        self.issuer = issuer
+
 class CreditAccount(Account):
     def __init__(self, reg_date, name):
         super(CreditAccount, self).__init__(reg_date, name)
         self.debt = 0
+        self.card = None
 
     def add_interest(self, percent):
         self.debt *= 1 + percent
+
+    def issue_credit_card(self, issuer):
+        self.card = CreditCard(issuer)
 
 class CurrencyExchange():
     def __init__(self):
