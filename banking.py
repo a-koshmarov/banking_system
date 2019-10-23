@@ -36,6 +36,9 @@ class Account:
     def change_name(self, new_name):
         self.name = new_name
 
+    def change_date(self, new_date):
+        self.date = new_date
+
 
 class DebitAccount(Account):
     def __init__(self, reg_date, name):
