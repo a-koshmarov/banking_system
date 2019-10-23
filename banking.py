@@ -33,6 +33,9 @@ class Account:
     def __repr__(self):
         return "{} was registered on {}".format(self.name, self.reg_date)
 
+    def change_name(self, new_name):
+        self.name = new_name
+
 
 class DebitAccount(Account):
     def __init__(self, reg_date, name):
