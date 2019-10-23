@@ -68,6 +68,11 @@ class DebitAccount(Account):
             self.balance -= amount
         account.balance += amount
 
+
+class CreditCard():
+    def __init__(self, issuer):
+        self.issuer = issuer
+
 class CreditAccount(Account):
     def __init__(self, reg_date, name):
         super(CreditAccount, self).__init__(reg_date, name)
@@ -75,6 +80,7 @@ class CreditAccount(Account):
 
     def add_interest(self, percent):
         self.debt *= 1 + percent
+
 
 class CurrencyExchange():
     def __init__(self):
