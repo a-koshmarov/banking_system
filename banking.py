@@ -25,7 +25,7 @@ class BankingSystem:
             raise TypeError
 
     def close_account(self, account):
-        account.notify()
+        account.notify("Your acccount is being closed.")
         self.accounts[str(type(account))].remove(account)
 
 
@@ -42,6 +42,9 @@ class Account:
 
     def change_date(self, new_date):
         self.date = new_date
+
+    def notify(self, message):
+        print(message)
 
 
 
