@@ -93,6 +93,9 @@ class CurrencyExchange():
             }
         }
 
+    def exchange(self, amount, cur_from, cur_to):
+        return self.currencies[cur_from][cur_to] * amount
+
 def main():
     bank = BankingSystem()
     account1 = DebitAccount("02.04.2010", "Bob")
@@ -101,7 +104,6 @@ def main():
     bank.add_account(account1)
     bank.add_account(account2)
     print(bank)
-
 
 if __name__ == "__main__":
     main()
